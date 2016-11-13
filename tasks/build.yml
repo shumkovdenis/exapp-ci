@@ -23,3 +23,7 @@ run:
     pwd
     ls -al $PWD
     go get -u github.com/Masterminds/glide
+    export GOPATH=$PWD/server-source
+    cd $PWD/server-source
+    glide install
+    go build -o $PWD/dist
