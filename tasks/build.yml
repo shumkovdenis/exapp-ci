@@ -12,7 +12,7 @@ inputs:
 - name: server-source
 
 outputs:
-- name: built
+- name: build
 
 
 run:

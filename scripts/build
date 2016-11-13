@@ -10,4 +10,4 @@ cd $PWD/server-source
 
 glide install
 
-go build -o built/exapp
+go build -o build/exapp
