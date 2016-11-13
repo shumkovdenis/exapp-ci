@@ -15,4 +15,4 @@ outputs:
 - name: dist
 
 run:
-  path: ci-source/scripts/build
+  path: ./ci-source/scripts/build
