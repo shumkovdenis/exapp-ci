@@ -19,7 +19,7 @@ run:
   args:
   - -exc
   - |
-  set -e -u -x
+  set -e
   echo "Start"
   curl https://glide.sh/get | sh
   echo "Curl"
