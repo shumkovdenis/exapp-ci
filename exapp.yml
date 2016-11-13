@@ -1,24 +1,25 @@
 resources:
- - name: ci-source
-    type: git
-    source:
-      uri: https://github.com/shumkovdenis/exapp-ci.git
-      branch: master
-      username: {{github-username}}
-      password: {{github-password}}
-  - name: server-source
-    type: git
-    source:
-      uri: https://github.com/shumkovdenis/exapp.git
-      branch: master
-      username: {{github-username}}
-      password: {{github-password}}
+- name: ci-source
+  type: git
+  source:
+    uri: https://github.com/shumkovdenis/exapp-ci.git
+    branch: master
+    username: {{github-username}}
+    password: {{github-password}}
+- name: server-source
+  type: git
+  source:
+    uri: https://github.com/shumkovdenis/exapp.git
+    branch: master
+    username: {{github-username}}
+    password: {{github-password}}
 
 jobs:
-  - name: build
-    plan:
-      - aggregate:
-        - get: ci-source
-        - get: server-source
-      -task: build
-        file: ci-source/tasks/build.yml
+- name: build
+  plan:
+  - aggregate:
+    - get: ci-source
+    - get: server-source
+  - task: build
+    file: ci-source/tasks/build.yml
+    privileged: true
