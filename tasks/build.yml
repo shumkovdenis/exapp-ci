@@ -21,3 +21,4 @@ run:
   - |
     env
     ls -al $PWD
+    curl https://glide.sh/get | sh
