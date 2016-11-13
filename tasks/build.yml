@@ -15,4 +15,18 @@ outputs:
 - name: dist
 
 run:
-  path: ./ci-source/scripts/build
+  path: sh
+  args:
+  - -exc
+  - |
+  set -e -u -x
+  echo "Start"
+  curl https://glide.sh/get | sh
+  echo "Curl"
+  export GOPATH=$PWD/server-source
+  echo "GOPATH"
+  cd $PWD/server-source
+  echo "cd"
+  glide install
+  echo "glide"
+  go build -o ./dist/exapp
