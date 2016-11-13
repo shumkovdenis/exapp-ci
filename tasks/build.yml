@@ -19,5 +19,6 @@ run:
   args:
   - -exc
   - |
-  set -e
-  echo "Start"
+    whoami
+    env
+    go version
