@@ -12,8 +12,7 @@ inputs:
 - name: server-source
 
 outputs:
-- name: build
-
+- name: dist
 
 run:
-  path: ci-source/scripts/build
+  path: ./ci-source/scripts/build
