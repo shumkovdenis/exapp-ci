@@ -20,5 +20,6 @@ run:
   - -exc
   - |
     env
+    pwd
     ls -al $PWD
     go get -u github.com/Masterminds/glide
