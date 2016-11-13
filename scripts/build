@@ -1,0 +1,13 @@
+#!/bin/bash
+
+set -e -u -x
+
+curl https://glide.sh/get | sh
+
+export GOPATH=$PWD/server-source
+
+cd $PWD/server-source
+
+glide install
+
+go build -o built/exapp
