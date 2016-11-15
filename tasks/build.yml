@@ -26,6 +26,7 @@ run:
     ls -al /
     ls -al /go
     ls -al /go/src
+    go env
     # export GOPATH=$PWD/go
     # export PATH=$PATH:$GOPATH/bin
     # go get -u github.com/Masterminds/glide
