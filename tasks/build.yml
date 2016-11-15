@@ -10,7 +10,7 @@ image_resource:
 inputs:
 - name: ci-source
 - name: server-source
-  path: /go/src/github.com/shumkovdenis/exapp
+  path: go/src/github.com/shumkovdenis/exapp
 
 outputs:
 - name: dist
@@ -20,16 +20,11 @@ run:
   args:
   - -exc
   - |
-    env
-    pwd
-    ls -al $(pwd)
-    ls -al /
-    ls -al /go
-    ls -al /go/src
-    go env
-    # export GOPATH=$PWD/go
-    # export PATH=$PATH:$GOPATH/bin
-    # go get -u github.com/Masterminds/glide
-    # cd $PWD/go/src/github.com/shumkovdenis/exapp
-    # glide install
-    # go build -o $PWD/dist
+    export GOPATH=$(pwd)/go
+    export PATH=$PATH:$GOPATH/bin
+    dist=$(pwd)/dist
+    go get -u github.com/Masterminds/glide
+    cd $(pwd)/go/src/github.com/shumkovdenis/exapp
+    glide install
+    echo $dist
+    go build -o $(dist)
