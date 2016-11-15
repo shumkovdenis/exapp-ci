@@ -24,6 +24,7 @@ run:
     pwd
     ls -al $PWD
     export GOPATH=$PWD/go
+    export PATH=$PATH:$GOPATH/bin
     go get -u github.com/Masterminds/glide
     cd $PWD/go/src/github.com/shumkovdenis/exapp
     glide install
