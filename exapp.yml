@@ -20,6 +20,7 @@ jobs:
   - aggregate:
     - get: ci-source
     - get: server-source
+      trigger: true
   - task: build
     file: ci-source/tasks/build.yml
     privileged: true
