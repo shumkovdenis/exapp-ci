@@ -27,4 +27,4 @@ run:
     cd $(pwd)/go/src/github.com/shumkovdenis/exapp
     glide install
     echo $dist
-    go build -o $dist
+    go build -o $dist/exapp
