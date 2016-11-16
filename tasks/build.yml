@@ -16,15 +16,4 @@ outputs:
 - name: dist
 
 run:
-  path: sh
-  args:
-  - -exc
-  - |
-    export GOPATH=$(pwd)/go
-    export PATH=$PATH:$GOPATH/bin
-    dist=$(pwd)/dist
-    go get -u github.com/Masterminds/glide
-    cd $(pwd)/go/src/github.com/shumkovdenis/exapp
-    glide install
-    echo $dist
-    go build -o $dist/exapp
+  path: ci-source/scripts/build.sh
